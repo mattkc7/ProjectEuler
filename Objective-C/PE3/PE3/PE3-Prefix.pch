@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'PE3' target in the 'PE3' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
