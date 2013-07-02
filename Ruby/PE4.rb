@@ -7,32 +7,32 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 
 =end
 
-def isPalindrome(num)
-  numStr = num.to_s
-  numStrReverse = numStr.reverse
-  return numStr == numStrReverse
+def is_palindrome?(num)
+  num_str = num.to_s
+  num_str_reverse = num_str.reverse
+  return num_str == num_str_reverse
 end
 
-def findLargestPalindrome
-  numA = 0
-  numB = 0
-  maxSoFar = 0
+def find_largest_palindrome
+  num_a = 0
+  num_b = 0
+  max_so_far = 0
   
-  for firstNum in (900..999)
-    for nextNum in (900..999)
-      prod = firstNum * nextNum
-      if isPalindrome(prod)
-        if prod > maxSoFar
-          maxSoFar = prod
-          numA = firstNum
-          numB = nextNum
+  for first_num in (900..999)
+    for next_num in (900..999)
+      prod = first_num * next_num
+      if is_palindrome?(prod)
+        if prod > max_so_far
+          max_so_far = prod
+          num_a = first_num
+          num_b = next_num
         end
       end
     end
   end
   
-  puts numA.to_s + " * " + numB.to_s + " = " + maxSoFar.to_s + " //our largest palindromic number"
+  puts num_a.to_s + " * " + num_b.to_s + " = " + max_so_far.to_s + " //our largest palindromic number"
     
 end
 
-findLargestPalindrome
+find_largest_palindrome
