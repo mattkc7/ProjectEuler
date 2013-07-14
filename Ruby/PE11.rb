@@ -31,12 +31,10 @@ end
 ###################################################################
 def left_to_right_helper(arr)
   largest_prod_so_far = 0
-  nums = []
   for num in (1..16)
     curr_prod = arr[num] * arr[num + 1] * arr[num + 2] * arr[num + 3]
     if curr_prod > largest_prod_so_far
       largest_prod_so_far = curr_prod
-      nums = [arr[num] , arr[num + 1] , arr[num + 2] , arr[num + 3]]
     end
   end
   
@@ -80,10 +78,9 @@ def top_to_bottom_approach
   return largest_prod_of_all_cols
 end
 
-
 ###################################################################
 #######        Diagonal                                  ##########
-#######        Top right to bottom left approach         ##########
+#######        Top left to bottom right approach         ##########
 #######                                                  ##########
 ###################################################################
 def left_to_diagonal_right_approach
@@ -107,7 +104,7 @@ end
 
 ###################################################################
 #######        Diagonal                                  ##########
-#######        Top left to bottom right approach         ##########
+#######        Top right to bottom left approach         ##########
 #######                                                  ##########
 ###################################################################
 def right_to_diagonal_left_approach
@@ -136,7 +133,6 @@ puts "top_to_bottom_approach: #{top_to_bottom_approach}"
 puts "left_to_right_approach: #{left_to_right_approach}"
 puts "left_to_diagonal_right: #{left_to_diagonal_right_approach}"
 puts "right_to_diagonal_left: #{right_to_diagonal_left_approach}" #ans: 70600674
-  
   
   
   
