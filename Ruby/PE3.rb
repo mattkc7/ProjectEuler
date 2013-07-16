@@ -15,7 +15,7 @@ def largestPrimeFactorOf(num)
     
     currPrime = getNextPrimeAfter(currPrime)
   end
-  
+  puts primeFactors
   puts primeFactors.last.to_s
 end
       
