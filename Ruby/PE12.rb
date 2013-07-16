@@ -20,9 +20,6 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 
 =end
-$myLog = open('PE12.log', 'w')
-$myLog << "NUM  |  SIZE   \n"
-$myLog << "----------------------------- \n"
 
 def number_of_factors_in(num)
   factors = 0
@@ -32,9 +29,7 @@ def number_of_factors_in(num)
       factors += 2
     end
   end
-  #puts factors
-  $myLog << "#{num}  |  #{factors} \n"
-  puts "#{num}  |  #{factors} \n"
+  
   return factors
 end
 
@@ -45,7 +40,7 @@ def triangle_with_over_five_hundred_divisors
   while true
     num_of_factors = number_of_factors_in(anchor)
     if num_of_factors > 500
-      return num_of_factors
+      return anchor
     end
     
     i += 1
@@ -53,23 +48,22 @@ def triangle_with_over_five_hundred_divisors
   end
 end
 
-def factors_in_triangle(n, anchor)
+def factors_in_triangle_with_recursion(n, anchor)
   count = 0
-  for i in (1..anchor)
+  for i in (1..Math.sqrt(anchor))
     if anchor % i == 0
-      count += 1
+      count += 2
     end
   end
   
   if count > 500
     return anchor
   end
-  $myLog << "#{anchor}  |  #{count} \n"
-  puts "#{anchor}  |  #{count} \n"
-  return factors_in_triangle(n+1, anchor += n)
+  
+  return factors_in_triangle_with_recursion(n+1, anchor += n)
 end
 
 
-puts "The triangle with over 500 divisiors: #{triangle_with_over_five_hundred_divisors}"
-# puts "The triangle with over 500 divisiors: #{factors_in_triangle(4270, 9114315)}"
+#puts "The triangle with over 500 divisiors: #{triangle_with_over_five_hundred_divisors}"
+puts "The triangle with over 500 divisiors: #{factors_in_triangle_with_recursion(1, 0)}"
 
