@@ -26,4 +26,6 @@ def square_of_sum
   return sum**2
 end
 
+puts sum_of_squares
+puts square_of_sum
 puts "Difference between sum_of_squares and square_of_sum is #{-(sum_of_squares - square_of_sum)}"
