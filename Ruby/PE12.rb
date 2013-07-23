@@ -64,6 +64,6 @@ def factors_in_triangle_with_recursion(n, anchor)
 end
 
 
-#puts "The triangle with over 500 divisiors: #{triangle_with_over_five_hundred_divisors}"
-puts "The triangle with over 500 divisiors: #{factors_in_triangle_with_recursion(1, 0)}"
+puts "The triangle with over 500 divisiors: #{triangle_with_over_five_hundred_divisors}"
+#puts "The triangle with over 500 divisiors: #{factors_in_triangle_with_recursion(1, 0)}"
 

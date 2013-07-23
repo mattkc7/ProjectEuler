@@ -11,4 +11,5 @@
 @interface TheGrid : NSObject
 
 -(void)beginSearchForProduct;
+
 @end
