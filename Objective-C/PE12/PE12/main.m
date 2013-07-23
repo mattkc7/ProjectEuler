@@ -43,7 +43,7 @@ int main(int argc, const char * argv[])
         NSDate *end = [NSDate date];
         NSTimeInterval timeDifference = [end timeIntervalSinceDate:start];
         //76576500
-        //76576500
+
         NSLog(@"Completed in %.3f seconds", timeDifference);
     }
     return 0;
